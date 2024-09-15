@@ -35,6 +35,8 @@
             this.btn_DelMechanic = new System.Windows.Forms.Button();
             this.btn_EditMechanic = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.rButt_Master = new System.Windows.Forms.RadioButton();
+            this.rButt_Student = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // cmbMechanic
@@ -76,7 +78,7 @@
             // 
             // btn_DelMechanic
             // 
-            this.btn_DelMechanic.Location = new System.Drawing.Point(459, 99);
+            this.btn_DelMechanic.Location = new System.Drawing.Point(459, 114);
             this.btn_DelMechanic.Name = "btn_DelMechanic";
             this.btn_DelMechanic.Size = new System.Drawing.Size(75, 28);
             this.btn_DelMechanic.TabIndex = 4;
@@ -86,7 +88,7 @@
             // 
             // btn_EditMechanic
             // 
-            this.btn_EditMechanic.Location = new System.Drawing.Point(459, 133);
+            this.btn_EditMechanic.Location = new System.Drawing.Point(459, 148);
             this.btn_EditMechanic.Name = "btn_EditMechanic";
             this.btn_EditMechanic.Size = new System.Drawing.Size(75, 31);
             this.btn_EditMechanic.TabIndex = 5;
@@ -103,11 +105,35 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "новое имя";
             // 
+            // rButt_Master
+            // 
+            this.rButt_Master.AutoSize = true;
+            this.rButt_Master.Checked = true;
+            this.rButt_Master.Location = new System.Drawing.Point(558, 58);
+            this.rButt_Master.Name = "rButt_Master";
+            this.rButt_Master.Size = new System.Drawing.Size(63, 17);
+            this.rButt_Master.TabIndex = 9;
+            this.rButt_Master.TabStop = true;
+            this.rButt_Master.Text = "Мастер";
+            this.rButt_Master.UseVisualStyleBackColor = true;
+            // 
+            // rButt_Student
+            // 
+            this.rButt_Student.AutoSize = true;
+            this.rButt_Student.Location = new System.Drawing.Point(558, 82);
+            this.rButt_Student.Name = "rButt_Student";
+            this.rButt_Student.Size = new System.Drawing.Size(62, 17);
+            this.rButt_Student.TabIndex = 10;
+            this.rButt_Student.Text = "Ученик";
+            this.rButt_Student.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rButt_Student);
+            this.Controls.Add(this.rButt_Master);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_EditMechanic);
             this.Controls.Add(this.btn_DelMechanic);
@@ -131,6 +157,8 @@
         private System.Windows.Forms.Button btn_DelMechanic;
         private System.Windows.Forms.Button btn_EditMechanic;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rButt_Master;
+        private System.Windows.Forms.RadioButton rButt_Student;
     }
 }
 

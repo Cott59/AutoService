@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace AutoService
         public Form1()
         {
             InitializeComponent();
-            if (!FSWork.IsFileExist("AutoService.db")) MakeStore();
+            if (!FSWork.IsFileExist("AutoService.db")) MakeStore();            
             FillMechanicsNames();
         }
         private void MakeStore()
@@ -27,17 +28,18 @@ namespace AutoService
         }
         private void FillMechanicsNames()
         {
-            foreach (string name in DBWork.GetMechanics())
+            foreach (string Name in DBWork.GetMechanics())
             {
-                cmbMechanic.Items.Add(name);
+                cmbMechanic.Items.Add(Name);
             }
         }
 
         private void btn_AddMaster_Click(object sender, EventArgs e)
         {
-            
+            string _index = "1";
+            if (rButt_Student.Checked) _index = "0.75";
             string addMaster = cmbMechanic.Text;
-            DBWork.AddMechanic(addMaster);
+            DBWork.AddMechanic(addMaster, _index);
         }
 
         private void btn_DelMechanic_Click(object sender, EventArgs e)

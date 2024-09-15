@@ -47,13 +47,14 @@ namespace AutoService
                 "Mechanics " +
                 "(id INTEGER  PRIMARY KEY AUTOINCREMENT, " +
                 "number INTEGER," +
-                "Name VARCHAR);";
-            string init_data_Mechanics= "INSERT INTO Mechanics(number, name)" +
+                "Name VARCHAR, " +
+                "index_cost VARCHAR);";
+            string init_data_Mechanics= "INSERT INTO Mechanics(number, name, index_cost)" +
                 "VALUES" +
-                "(1, 'Иванов'), " +
-                "(2, 'Петров')," +
-                "(3, 'Сидоров')," +
-                "(4, 'Кузнецов');";
+                "(1, 'Иванов', '1'), " +
+                "(2, 'Петров', '0.75')," +
+                "(3, 'Сидоров', '1')," +
+                "(4, 'Кузнецов', '1');";
             string create_table_Jobs = "CREATE TABLE IF NOT EXISTS " +
                 "Jobs " +
                 "(Jobs_id INTEGER  PRIMARY KEY AUTOINCREMENT, " +
@@ -96,7 +97,7 @@ namespace AutoService
         static public List<string> GetMechanics()
         {
             List<string> result = new List<string>();
-            string get_mechanisc = "SELECT name From Mechanics;";
+            string get_mechanisc = "SELECT Name From Mechanics;";
 
             using (SQLiteConnection conn = new SQLiteConnection(path))
             {
@@ -158,12 +159,12 @@ namespace AutoService
             }
         }
 
-        static public void AddMechanic(string _newMechanicInsert)            
-        {
-            string init_data_Mechanic = "INSERT INTO Mechanics(number, name)" +
+        static public void AddMechanic(string _newMechanicInsert, string _index)            
+        {                        
+            string init_data_Mechanic = "INSERT INTO Mechanics(number, name, index_cost)" +
                 "VALUES" +                
-                $"(23, '{_newMechanicInsert}');";
-            //string path = $"Data Source={_dbname};";
+                $"(23, '{_newMechanicInsert}','{_index}');";
+            
             using (SQLiteConnection conn = new SQLiteConnection(path))
             {
                 SQLiteCommand cmd = new SQLiteCommand(conn);
